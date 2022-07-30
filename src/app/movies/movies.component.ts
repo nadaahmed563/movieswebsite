@@ -17,9 +17,7 @@ export class MoviesComponent implements OnInit {
 
   ngOnInit(): void {    
     this._MoviesService.getMovies();
-    this.getAllCategories() ;
-    console.log(this._AccountService.userValue);
-    
+    this.getAllCategories() ;    
   }
   deleteMovie(movieDetails:any){
     let data = {
@@ -35,7 +33,6 @@ export class MoviesComponent implements OnInit {
          this._MoviesService.getMovies()
        }
      })
-    
   }
   getAllCategories() {
     this._MoviesService.getAllCategories().subscribe((res: any) => {

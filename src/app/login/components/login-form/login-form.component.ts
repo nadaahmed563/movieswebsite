@@ -14,6 +14,7 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // login-form submit method
   ngSubmit(formValue: FormData) {
     console.log(formValue);
     this._AccountService.login(formValue).subscribe((res: any) => {
@@ -24,7 +25,6 @@ export class LoginFormComponent implements OnInit {
       } else {
         this.message = "Email or Password Incorrect!"
       }
-
     }, error => {
       this.message = "Email or Password is Incorrect!"
     })

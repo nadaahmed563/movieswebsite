@@ -1,11 +1,16 @@
 <div class="row CC-height-holder">
+    <!-- movie image holder -->
     <div class="col-md-4">
         <img src="{{apiUrl}}\{{movieDetail?.image}}" class="w-100 CC-image-holder" alt="poster" srcset="">
     </div>
+    <!-- Mpvie details -->
     <div class="col-md-8">
         <div class="d-flex flex-column justify-content-center h-75">
+            <!-- movie name -->
             <h2 class="py-3 cCC-text-white">{{movieDetail?.name}}</h2>
+            <!-- movie description -->
             <p class="cCC-text-white m-0">{{movieDetail?.description}}</p>
+            <!-- movie category Name -->
             <p class="mt-2 cCC-text-white">category : <b class="cCC-text-secondary">{{movieDetail?.category?.name}}</b> </p>
         </div>
     </div>

@@ -6,6 +6,7 @@
     </div>
     <!-- categories component -->
     <app-categories-filter title="Categories" [data]="allCategories" (selectedValue)="filterCategory($event)"></app-categories-filter>
+    <!-- movie card component -->
     <div class="row mt-5">
         <div class="col-md-3 uCC-Click position-relative mb-4" *ngFor="let movie of _MoviesService.moviesList">
             <!-- image -->
@@ -22,15 +23,15 @@
             </div>
             <!-- Title in bottom of the image -->
             <div class="d-flex flex-column align-items-center mt-2">
+                <!-- movie name -->
                 <h5 class="m-0 cCC-text-white">{{movie.name}}</h5>
+                <!-- movie description -->
                 <p class="m-0 cCC-text-white">{{movie.description}}</p>
             </div>
-            
         </div>
     </div>
 </div>
-<!-- model create new film -->
-<!-- model popup -->
+<!-- model create new movie -->
 <app-create-movie-popup></app-create-movie-popup>
-<!-- modal edit -->
+<!-- modal edit movie-->
 <app-edit-movie-popup></app-edit-movie-popup>

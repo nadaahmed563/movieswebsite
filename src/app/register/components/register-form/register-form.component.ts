@@ -24,7 +24,6 @@ export class RegisterFormComponent implements OnInit {
       }else{
         this.message = res.message.email
       }
-      
     })
   }
 
