@@ -1,0 +1,29 @@
+// vars colors
+$main : #131722;
+$white:#fff;
+$secondary:brown;
+// START === Background Color
+.cCC-bg-Inherit {
+    background-color: inherit;
+}
+.cCC-bg-main {
+    background-color: $main;
+}
+.cCC-bg-white {
+    background-color: $white;
+}
+.cCC-bg-secondary {
+    background-color: $secondary;
+}
+// END === Background Color
+// START === Text Color
+.cCC-text-main {
+    color: $main;
+}
+.cCC-text-white {
+    color: $white;
+}
+.cCC-text-secondary {
+    color: $secondary;
+}
+// END === Text Color

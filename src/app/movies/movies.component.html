@@ -1,0 +1,36 @@
+<!-- original image holder -->
+<div class="CC-height-holder">
+    <!-- add new movie holder -->
+    <div class="w-100 d-flex justify-content-end mb-3">
+        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add New Movie</button>
+    </div>
+    <!-- categories component -->
+    <app-categories-filter title="Categories" [data]="allCategories" (selectedValue)="filterCategory($event)"></app-categories-filter>
+    <div class="row mt-5">
+        <div class="col-md-3 uCC-Click position-relative mb-4" *ngFor="let movie of _MoviesService.moviesList">
+            <!-- image -->
+            <a [routerLink]="['/movie-details' , movie.id]">
+                <img src="{{apiUrl}}\{{movie.image}}" class="w-100 position-relative" alt="..." style="height:305px;">
+            </a>
+            <!-- edit and delete holder -->
+            <div class="d-flex flex-column position-absolute CC-position-holder gap-3">
+                <!-- delete button -->
+                <button class="cCC-text-white cCC-bg-secondary border-0" (click)="deleteMovie(movie)">delete</button>
+                <!-- edit button-->
+                <button class="cCC-text-white cCC-text-secondary border-0 px-3"
+                data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="_MoviesService.movieDetails(movie)">edit</button>
+            </div>
+            <!-- Title in bottom of the image -->
+            <div class="d-flex flex-column align-items-center mt-2">
+                <h5 class="m-0 cCC-text-white">{{movie.name}}</h5>
+                <p class="m-0 cCC-text-white">{{movie.description}}</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- model create new film -->
+<!-- model popup -->
+<app-create-movie-popup></app-create-movie-popup>
+<!-- modal edit -->
+<app-edit-movie-popup></app-edit-movie-popup>

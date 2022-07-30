@@ -1,0 +1,19 @@
+<nav class="py-3 d-flex align-items-center justify-content-between">
+    <ul class="list-unstyled d-flex align-items-center">
+        <!-- Wesbite logo text -->
+        <li class="pe-5 text-capitalize" >
+            <h1 class="cCC-text-white">Movies</h1>
+        </li>
+        <!-- home page route -->
+        <li class="px-2" *ngIf ='isLogin'><a class="cCC-text-white uCC-Click" routerLink="movies" routerLinkActive="CC-router-link-style">Movies</a></li>
+    </ul>
+    <!-- login & register route -->
+    <ul class="list-unstyled d-flex align-items-center gap-5">
+        <!-- login page route -->
+        <li *ngIf ='!isLogin'><a class="cCC-text-white uCC-Click" routerLink="login" routerLinkActive="CC-router-link-style">login</a></li>
+        <!-- register page route -->
+        <li *ngIf ='!isLogin'><a  class="cCC-text-white uCC-Click" routerLink="register" routerLinkActive="CC-router-link-style">Register</a></li>
+        <!-- logout -->
+        <li *ngIf ='isLogin' (click)="this._AccountService.logout()"><a  class="cCC-text-white" routerLink="">logOut</a></li>
+    </ul>
+</nav>

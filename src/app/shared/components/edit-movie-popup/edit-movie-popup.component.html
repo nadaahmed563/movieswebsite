@@ -1,0 +1,45 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-center">
+                <h4 class="modal-title" id="exampleModalLabel1">Create New Film</h4>
+            </div>
+            <div class="modal-body">
+                <form class="d-flex flex-column gap-4" #editMovieForm='ngForm'
+                    (ngSubmit)="editForm(editMovieForm.value)">
+                    <!-- Movie Name Input -->
+                    <div>
+                        <label for="name" class="form-label cCC-text-secondary m-0">Movie Name</label>
+                        <input type="name" class="form-control" id="name" aria-describedby="nameHelp" #name="ngModel"
+                            name="name" type="text" name='name' [ngModel]="_MoviesService.movieDetail?.name" required minlength="3"
+                            >
+                    </div>
+                    <!-- description Input -->
+                    <div>
+                        <label for="description" class="form-label cCC-text-secondary m-0">Movie description</label>
+                        <input type="description" class="form-control" id="description" name="description"
+                            aria-describedby="descriptionHelp" #description="ngModel" type="text"
+                            description='description' [ngModel]="_MoviesService.movieDetail?.description" required minlength="3">
+                    </div>
+                    <!-- Movie image Input -->
+                    <div>
+                        <label for="name" class="form-label cCC-text-secondary m-0">Movie image</label>
+                        <input type="image" class="form-control" id="image" aria-describedby="imageHelp"
+                            #image="ngModel" image="image" type="text" required name="image"
+                            accept="image/png,image/gif,image/jpeg,image/jpg" [ngModel]="_MoviesService.movieDetail?.image">
+                    </div>
+                    <!-- Movie category Id Input -->
+                    <div>
+                        <label for="category" class="form-label cCC-text-secondary m-0">Movie category ID</label>
+                        <input type="category" [ngModel]="_MoviesService.movieDetail?.category_id" class="form-control" id="category"
+                            aria-describedby="categoryHelp" name="category_id" #category_id="ngModel"
+                            category_id="category" type="text" required>
+                    </div>
+                    <!-- Submit Form Button -->
+                    <button type="submit" class="btn btn-primary ms-auto" data-bs-dismiss="modal">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

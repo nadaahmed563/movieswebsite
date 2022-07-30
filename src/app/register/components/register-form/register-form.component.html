@@ -1,0 +1,28 @@
+<!-- form holder -->
+<form class="d-flex flex-column gap-5" #registerForm='ngForm' (ngSubmit)="ngSubmit(registerForm.value)">
+    <!-- Username Input -->
+    <div>
+        <label for="name" class="form-label cCC-text-white">Name</label>
+        <input type="text" class="form-control" id="name" #name="ngModel" type="text" name='name' ngModel required minlength="3"
+            maxlength="15">
+    </div>
+    <!-- Email Address Input -->
+    <div>
+        <label for="email" class="form-label cCC-text-white">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+        #email="ngModel" type="email" name='email' ngModel required>
+    </div>
+    <!-- Password Input-->
+    <div>
+        <label for="password" class="form-label cCC-text-white">Password</label>
+        <input type="password" class="form-control" id="password"
+           #password="ngModel" type="password" name='password' ngModel required minlength="6"
+            maxlength="8">
+    </div>
+    <!-- Submit Form Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+</form>
+<!-- success message -->
+<div class="mt-4 text-center">
+    <p class="fCC-bold-sA" style="color:green">{{message}}</p>
+</div>

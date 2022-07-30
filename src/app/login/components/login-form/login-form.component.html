@@ -1,0 +1,18 @@
+<!-- form holder -->
+<form class="d-flex flex-column gap-5" #loginForm='ngForm' (ngSubmit)="ngSubmit(loginForm.value)">
+    <!-- Email Address Input -->
+    <div>
+        <label for="email" class="form-label cCC-text-white">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+         #email="ngModel" name="email" type="text" email='email' ngModel required minlength="3">
+    </div>
+    <!-- Password Input-->
+    <div>
+        <label for="password" class="form-label cCC-text-white">Password</label>
+        <input type="password" class="form-control" id="password" #password="ngModel" type="password" name='password'
+            ngModel required minlength="6" maxlength="8">
+    </div>
+    <!-- Submit Form Button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<p class="text-white text-bg-danger text-center my-2">{{message}}</p>

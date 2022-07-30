@@ -1,0 +1,7 @@
+<!-- Categories Select Box -->
+<label for="" class="mx-2 cCC-text-white ">{{title}} : </label>
+<select class="uCC-f-radius-s10 p-2" (change)="detectChanges($event)">
+    <!-- Options Categories -->
+    <option value="all" selected>All</option>
+    <option value="{{option?.id}}" *ngFor="let option of data">{{option?.name}}</option>
+</select>
