@@ -6,37 +6,44 @@
                 <h4 class="modal-title" id="exampleModalLabel">Create New Film</h4>
             </div>
             <div class="modal-body">
-                <form class="d-flex flex-column gap-4" #createMovieForm='ngForm' (ngSubmit)="ngSubmit(createMovieForm.value)">
+                <form class="d-flex flex-column gap-4" #f="ngForm">
                     <!-- Movie Name Input -->
                     <div>
                         <label for="name" class="form-label cCC-text-secondary m-0">Movie Name</label>
-                        <input type="name" class="form-control" id="name" aria-describedby="nameHelp" #name="ngModel"
-                            name="name" type="text" name='name' ngModel required minlength="3" maxlength="15">
+                        <input type="name" class="form-control" id="name" aria-describedby="nameHelp" 
+                            name="name" type="text" name='name'  #name required minlength="3" maxlength="15">
                     </div>
                     <!-- description Input -->
                     <div>
                         <label for="description" class="form-label cCC-text-secondary m-0">Movie description</label>
                         <input type="description" class="form-control" id="description" name="description"
-                            aria-describedby="descriptionHelp" #description="ngModel"
+                            aria-describedby="descriptionHelp" #description
                             type="text" description='description' ngModel required minlength="3" maxlength="15">
                     </div>
                     <!-- Movie image Input -->
                     <div>
                         <label for="name" class="form-label cCC-text-secondary m-0">Movie image</label>
                         <input type="image" class="form-control" id="image" aria-describedby="imageHelp"
-                             image="image" type="file" required name="image"  (change)="upload($event)"
+                             image="image" type="file" required name="image" #fileInput  (change)="onFileChanged($event)"
                             accept="image/png,image/gif,image/jpeg,image/jpg">
                     </div>
                     <!-- Movie category Id Input -->
                     <div>
                         <label for="category" class="form-label cCC-text-secondary m-0">Movie category ID</label>
                         <input  type="category" class="form-control" id="category" aria-describedby="categoryHelp" name="category_id"
-                            #category_id="ngModel" category_id="category" type="text" ngModel required>
+                            #category_id category_id="category" type="text" ngModel required>
                     </div>
                     <!-- Submit Form Button -->
-                    <button type="submit" class="btn btn-primary ms-auto"  data-bs-dismiss="modal">Create</button>
+                    <button type="submit" (click)="onUpload()" class="btn btn-primary ms-auto"  data-bs-dismiss="modal">Create</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
