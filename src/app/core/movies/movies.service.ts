@@ -71,7 +71,6 @@ export class MoviesService {
   movieDetails(data: any) {
     this.getMovieDetails(data.id).subscribe((res: any) => {
       this.movieDetail = res.message
-      console.log(this.movieDetail);
     })
   }
 }

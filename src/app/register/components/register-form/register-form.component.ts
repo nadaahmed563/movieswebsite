@@ -15,9 +15,7 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit(): void {
   }
   ngSubmit(formValue: FormData){
-    console.log(formValue);
     this._AccountService.sendRegistrationData(formValue).subscribe((res:any) =>{
-      console.log(res);
       if (res.status == 'success') {
         this.message = res.message;
         this.router.navigate(['\login']);

@@ -28,7 +28,6 @@ export class MoviesComponent implements OnInit {
       _method:'delete'
     }
      this._MoviesService.deleteMovie(data,movieDetails.id).subscribe((res:any)=>{
-      console.log(res);
        if (res.status == 'success'){
          this._MoviesService.getMovies()
        }
@@ -49,7 +48,6 @@ export class MoviesComponent implements OnInit {
   }
   getProductsCategory(category: any) {
     this._MoviesService.moviesByCategories(`${+category}`).subscribe((res: any) => {
-      console.log(res);
       this._MoviesService.moviesList = res.message
     })
   }

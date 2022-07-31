@@ -24,7 +24,6 @@ export class CreateMoviePopupComponent implements OnInit {
     formData.set('name', this.name.nativeElement.value);
     formData.set('description', this.description.nativeElement.value);
     formData.set('category_id', this.category_id.nativeElement.value);
-    console.log(this.name.nativeElement.value);
     this._MoviesService.createNewMovie(formData).subscribe((res:any) => {
       if (res.status == 'success') {
         this._MoviesService.getMovies()

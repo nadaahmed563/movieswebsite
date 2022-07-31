@@ -16,9 +16,7 @@ export class LoginFormComponent implements OnInit {
   }
   // login-form submit method
   ngSubmit(formValue: FormData) {
-    console.log(formValue);
     this._AccountService.login(formValue).subscribe((res: any) => {
-      console.log(res);
       if (res.status == 'success') {
         this.message = res.message;
         this.router.navigate(['\movies']);

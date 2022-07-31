@@ -20,10 +20,8 @@ export class MovieDetailsComponent implements OnInit {
   }
   // get movie details method
   movieDetails(){
-    console.log(this._ActivatedRoute.snapshot.url[1].path);
     this._MoviesService.getMovieDetails(`${+this._ActivatedRoute.snapshot.url[1].path}`).subscribe((res:any)=>{
       this.movieDetail = res.message
-      console.log(this.movieDetail);
     })
   }
 

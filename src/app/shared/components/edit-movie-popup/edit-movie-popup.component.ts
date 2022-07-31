@@ -14,7 +14,6 @@ export class EditMoviePopupComponent implements OnInit {
   ngOnInit(): void {
   }
   editForm(formData: any) {
-    console.log(formData);
     let data = {
       name: formData.name,
       description: formData.description,
@@ -23,7 +22,6 @@ export class EditMoviePopupComponent implements OnInit {
       _method: 'put'
     }
     this._MoviesService.editMovie(data, this._MoviesService.movieDetail.id).subscribe((res: any) => {
-      console.log(res);
       if (res.status == 'success') {
         this._MoviesService.getMovies()
       }
